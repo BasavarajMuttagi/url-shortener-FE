@@ -75,7 +75,7 @@ function ShortUrlTable({
                             >
                               <td className="px-6 py-4 whitespace-nowrap text-sm  text-slate-800 text-center group-hover:text-blue-700">
                                 <a
-                                  href={`http://localhost:3000/${eachUrl.shortUrlKey}`}
+                                  href={`https://baby-url.vercel.app/${eachUrl.shortUrlKey}`}
                                   target="_blank"
                                 >
                                   {eachUrl.shortUrlKey}
@@ -101,7 +101,7 @@ function ShortUrlTable({
                           >
                             <td className="px-6 py-4 whitespace-nowrap text-sm  text-slate-800 text-center group-hover:text-blue-700">
                               <a
-                                href={`http://localhost:3000/${eachUrl.shortUrlKey}`}
+                                href={`https://baby-url.vercel.app/${eachUrl.shortUrlKey}`}
                                 target="_blank"
                               >
                                 {eachUrl.shortUrlKey}
