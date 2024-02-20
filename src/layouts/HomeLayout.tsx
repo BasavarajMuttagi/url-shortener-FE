@@ -1,6 +1,5 @@
 import { QueryClient, useQuery } from "@tanstack/react-query";
 
-import Footer from "../components/Footer";
 import ShortUrlTable from "../components/ShortUrlTable";
 import StatCards from "../components/StatCards";
 import UserInputForm from "../components/UserInputForm";
