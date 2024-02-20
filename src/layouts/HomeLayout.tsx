@@ -5,6 +5,7 @@ import ShortUrlTable from "../components/ShortUrlTable";
 import StatCards from "../components/StatCards";
 import UserInputForm from "../components/UserInputForm";
 import apiClient from "../apiClient";
+import BaseLayout from "./BaseLayout";
 
 function HomeLayout() {
   const refetchCall = () => {
@@ -43,7 +44,7 @@ function HomeLayout() {
     );
   }
   return (
-    <div className="w-full space-y-10 overflow-y-scroll">
+    <BaseLayout>
       <StatCards />
       <div className="w-full flex justify-center  mt-10">
         <UserInputForm refetchCall={refetchCall} />
@@ -52,8 +53,7 @@ function HomeLayout() {
         <ShortUrlTable data={data.All_URLS.toReversed()} limit={3} />
         {/* <RefererTable /> */}
       </div>
-      <Footer />
-    </div>
+    </BaseLayout>
   );
 }
 
