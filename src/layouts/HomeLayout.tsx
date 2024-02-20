@@ -1,5 +1,4 @@
 import { QueryClient, useQuery } from "@tanstack/react-query";
-
 import ShortUrlTable from "../components/ShortUrlTable";
 import StatCards from "../components/StatCards";
 import UserInputForm from "../components/UserInputForm";
@@ -8,7 +7,6 @@ import BaseLayout from "./BaseLayout";
 
 function HomeLayout() {
   const refetchCall = () => {
-    console.log("called");
     const queryClient = new QueryClient();
     queryClient
       .invalidateQueries({ queryKey: ["all_urls"], exact: true })
@@ -44,7 +42,7 @@ function HomeLayout() {
   }
   return (
     <BaseLayout>
-      <StatCards />
+      <StatCards total={data.total_urls_created} users={data.users} />
       <div className="w-full flex justify-center  mt-10">
         <UserInputForm refetchCall={refetchCall} />
       </div>

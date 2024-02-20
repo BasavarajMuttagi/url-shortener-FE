@@ -27,7 +27,7 @@ function ShortUrlTable({
       </p>
     )
   ) : (
-    <div className="flex flex-col space-y-1  max-w-[95%]  md:max-w-none">
+    <div className="flex flex-col space-y-4  max-w-[95%]  md:max-w-none">
       <h1 className="text-xl font-gothic text-center text-pink-500">{title}</h1>
       <Link to={"/myurls"}>
         <span className="text-sm font-gothic  text-blue-600 flex items-center space-x-2 cursor-pointer hover:text-purple-500">

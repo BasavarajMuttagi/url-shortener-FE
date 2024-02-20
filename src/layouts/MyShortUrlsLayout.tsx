@@ -31,7 +31,7 @@ function MyShortUrlsLayout() {
   }
   return (
     <BaseLayout>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-10">
           <MyShortUrls data={data.All_URLS} title={"My Short Urls"} />
       </div>
     </BaseLayout>
