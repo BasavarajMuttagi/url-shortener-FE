@@ -1,0 +1,7 @@
+@import "@fontsource/poppins";
+@import "@fontsource-variable/inter";
+@import '@fontsource/dela-gothic-one';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
