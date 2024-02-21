@@ -24,7 +24,7 @@ function UserInputForm({ refetchCall }: any) {
 
   const genetateShortUrl = async (data: inputSchemaType) => {
     setIsLoading(true);
-   await apiClient
+    await apiClient
       .post("/shortener/create", {
         URL: data.OriginalUrl,
       })
@@ -71,11 +71,13 @@ function UserInputForm({ refetchCall }: any) {
         <div className="self-center">
           <button
             type="submit"
-            className="px-3 py-2 h-12 rounded-md bg-[#9C7EF1] flex items-center space-x-3"
+            className="px-3 py-2 h-12 rounded-md bg-[#9C7EF1] flex items-center"
           >
-            <span className="text-white font-gothic">CREATE</span>
+            <span className="text-white text-center font-gothic">CREATE</span>
             <span>
-              {isLoading && <ImSpinner8 className="animate-spin text-white" />}
+              {false && (
+                <ImSpinner8 className="animate-spin text-white ml-2 h-6 w-6" />
+              )}
             </span>
           </button>
         </div>
