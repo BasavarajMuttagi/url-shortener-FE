@@ -146,6 +146,15 @@ function SignUp() {
           </span>
         </button>
       </div>
+      <div className="flex flex-col space-y-5  items-center justify-center font-gothic text-white">
+        <div>or</div>
+        <div className="text-wrap text-center">
+          Already Have An Account ?{" "}
+          <span className="text-blue-500" onClick={() => navigate("/login")}>
+            Login
+          </span>
+        </div>
+      </div>
     </form>
   );
 }
