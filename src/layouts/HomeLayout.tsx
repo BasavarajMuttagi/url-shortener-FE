@@ -5,8 +5,10 @@ import UserInputForm from "../components/UserInputForm";
 import apiClient from "../apiClient";
 import BaseLayout from "./BaseLayout";
 import RefererTable from "../components/RefererTable";
+import useBabyLink from "../store";
 
 function HomeLayout() {
+  const { token } = useBabyLink();
   const refetchCall = () => {
     const queryClient = new QueryClient();
     queryClient
@@ -17,7 +19,11 @@ function HomeLayout() {
       });
   };
   const getAllUrls = async () => {
-    const record = await apiClient.get("/shortener/getallurls");
+    const record = await apiClient.get("/shortener/getallurls", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     return record.data;
   };

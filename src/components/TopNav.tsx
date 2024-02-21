@@ -3,11 +3,18 @@ import logo from "../assets/logo.png";
 import { twMerge } from "tailwind-merge";
 import { ElementRef, useRef, useState } from "react";
 import { AiFillHome } from "react-icons/ai";
-import { FaUser, FaListAlt, FaHandsHelping } from "react-icons/fa";
+import {
+  FaUser,
+  FaListAlt,
+  FaHandsHelping,
+  FaSignOutAlt,
+} from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { IoCloseOutline } from "react-icons/io5";
+import useBabyLink from "../store";
 function TopNav() {
+  const { logout } = useBabyLink();
   const [isShow, setIsShow] = useState(false);
 
   const showRef = useRef<ElementRef<"div">>(null);
@@ -88,6 +95,12 @@ function TopNav() {
             </NavLink>
             <li className="flex items-center space-x-4 hover:cursor-pointer hover:text-teal-500">
               <IoSettingsSharp className="h-6 w-6" /> <span>Settings</span>
+            </li>
+            <li
+              className="flex items-center space-x-4 hover:cursor-pointer hover:text-teal-500"
+              onClick={() => logout()}
+            >
+              <FaSignOutAlt className="h-6 w-6" /> <span>Logout</span>
             </li>
           </ul>
         </div>

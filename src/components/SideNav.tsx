@@ -5,7 +5,10 @@ import { FaHandsHelping } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { FaSignOutAlt } from "react-icons/fa";
+import useBabyLink from "../store";
 function SideNav() {
+  const { logout } = useBabyLink();
   return (
     <nav className="hidden  md:flex flex-col md:max-w-[260px] font-gothic h-[100%]  w-full bg-white shrink-0 drop-shadow-lg">
       <div className="w-full px-4 pt-3">
@@ -60,6 +63,12 @@ function SideNav() {
           </NavLink>
           <li className="flex items-center space-x-4 hover:cursor-pointer hover:text-teal-500">
             <IoSettingsSharp className="h-6 w-6" /> <span>Settings</span>
+          </li>
+          <li
+            className="flex items-center space-x-4 hover:cursor-pointer hover:text-teal-500"
+            onClick={() => logout()}
+          >
+            <FaSignOutAlt className="h-6 w-6" /> <span>Logout</span>
           </li>
         </ul>
       </div>

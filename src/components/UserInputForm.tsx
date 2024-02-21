@@ -5,8 +5,11 @@ import { ImSpinner8 } from "react-icons/im";
 import { useState } from "react";
 import apiClient from "../apiClient";
 import { AxiosError } from "axios";
+import useBabyLink from "../store";
+import { enqueueSnackbar } from "notistack";
 
 function UserInputForm({ refetchCall }: any) {
+  const { token } = useBabyLink();
   const [isLoading, setIsLoading] = useState(false);
   const inputSchema = z.object({
     OriginalUrl: z.string().min(1),
@@ -25,16 +28,28 @@ function UserInputForm({ refetchCall }: any) {
   const genetateShortUrl = async (data: inputSchemaType) => {
     setIsLoading(true);
     await apiClient
-      .post("/shortener/create", {
-        URL: data.OriginalUrl,
-      })
+      .post(
+        "/shortener/create",
+        {
+          URL: data.OriginalUrl,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
-        console.log(res);
+        enqueueSnackbar({ message: res.data.message, variant: "success" });
         reset();
         refetchCall();
       })
       .catch((err: AxiosError | any) => {
         console.log(err.response?.data.message);
+        enqueueSnackbar({
+          message: err.response?.data.message,
+          variant: "error",
+        });
         setError("root", { message: err.response?.data.message });
       })
       .finally(() => {
