@@ -13,7 +13,7 @@ function RefererTable({ title }: any) {
       </p>
     )
   ) : (
-    <div className="flex flex-col space-y-4  max-w-[95%]  md:max-w-none">
+    <div className="flex flex-col space-y-4 mt-10 max-w-[95%]  md:max-w-none">
       <h1 className="text-xl font-gothic text-center text-pink-500">{title}</h1>
       {pathname == "/" ? (
         <NavLink to="/referers">

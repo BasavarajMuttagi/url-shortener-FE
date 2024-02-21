@@ -5,7 +5,7 @@ import StatCard from "./StatCard";
 
 function StatCards({ total = 0, users = 0 }: any) {
   return (
-    <div className="bg-yellow-300 py-10 space-y-5 px-2  md:flex justify-around items-baseline w-full md:py-12">
+    <div className="bg-yellow-300 py-10 space-y-5  px-2 flex flex-col items-center   md:flex-row md:justify-around md:items-baseline w-full md:py-12 md:space-x-4">
       <StatCard title={"SHORT URLS CREATED"} data={total}>
         <HiLink className="h-10 w-10 text-blue-500" />
       </StatCard>
