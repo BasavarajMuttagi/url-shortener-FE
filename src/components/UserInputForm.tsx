@@ -75,7 +75,7 @@ function UserInputForm({ refetchCall }: any) {
           >
             <span className="text-white text-center font-gothic">CREATE</span>
             <span>
-              {false && (
+              {isLoading && (
                 <ImSpinner8 className="animate-spin text-white ml-2 h-6 w-6" />
               )}
             </span>
