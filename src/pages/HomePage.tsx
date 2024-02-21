@@ -1,14 +1,9 @@
-import { Outlet } from "react-router-dom";
-
-import SideNav from "../components/SideNav";
+import HomeLayout from "../layouts/HomeLayout";
 
 function HomePage() {
   return (
     <>
-      <div className="bg-[#211C6A] h-screen flex selection:bg-blue-600">
-        <SideNav />
-        <Outlet />
-      </div>
+      <HomeLayout />
     </>
   );
 }

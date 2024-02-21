@@ -22,9 +22,11 @@ function SideNav() {
               <FaListAlt className="h-6 w-6" /> <span>My Short Urls</span>
             </li>
           </NavLink>
-          <li className="flex items-center space-x-4 hover:cursor-pointer hover:text-teal-500">
-            <FaHandsHelping className="h-6 w-6" /> <span>Referers</span>
-          </li>
+          <NavLink to={"/referers"}>
+            <li className="flex items-center space-x-4 hover:cursor-pointer hover:text-teal-500">
+              <FaHandsHelping className="h-6 w-6" /> <span>Referers</span>
+            </li>
+          </NavLink>
           <li className="flex items-center space-x-4 hover:cursor-pointer hover:text-teal-500">
             <IoSettingsSharp className="h-6 w-6" /> <span>Settings</span>
           </li>

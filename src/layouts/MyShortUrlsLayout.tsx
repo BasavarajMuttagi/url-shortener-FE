@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import BaseLayout from "./BaseLayout";
 import apiClient from "../apiClient";
-import MyShortUrls from "../components/MyShortUrls";
+import ShortUrlTable from "../components/ShortUrlTable";
 
 function MyShortUrlsLayout() {
   const getAllUrls = async () => {
@@ -31,8 +31,8 @@ function MyShortUrlsLayout() {
   }
   return (
     <BaseLayout>
-      <div className="flex flex-col items-center mt-10">
-          <MyShortUrls data={data.All_URLS} title={"My Short Urls"} />
+      <div className="flex flex-col items-center mt-10 h-full">
+          <ShortUrlTable data={data.All_URLS} title={"My Short Urls"} />
       </div>
     </BaseLayout>
   );

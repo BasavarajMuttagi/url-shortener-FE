@@ -1,18 +1,23 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import MyShortUrlsPage from "../pages/MyShortUrlsPage";
-import HomeLayout from "../layouts/HomeLayout";
+import BasePage from "../pages/BasePage";
+import ReferersPage from "../pages/ReferersPage";
 const routes = createBrowserRouter([
   {
-    element: <HomePage />,
+    element: <BasePage />,
     children: [
       {
         path: "",
-        element: <HomeLayout />,
+        element: <HomePage />,
       },
       {
         path: "/myurls",
         element: <MyShortUrlsPage />,
+      },
+      {
+        path: "/referers",
+        element: <ReferersPage />,
       },
     ],
   },

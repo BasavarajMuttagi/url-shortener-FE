@@ -1,18 +1,30 @@
 import { HiOutlineExternalLink } from "react-icons/hi";
+import { NavLink, useLocation } from "react-router-dom";
 
-function RefererTable() {
-  return (
-    <div className="flex flex-col space-y-1  max-w-[95%]  md:max-w-none">
-      <h1 className="text-xl font-gothic text-center text-pink-500">
-        Top Referers{" "}
-      </h1>
-      <span
-        className="text-sm font-gothic  text-blue-600 flex items-center space-x-2 cursor-pointer hover:text-purple-500"
-        onClick={() => alert("Coming Soon")}
-      >
-        <span>Show All </span>
-        <HiOutlineExternalLink className="h-5 w-5" />
-      </span>
+function RefererTable({ title }: any) {
+  const data = [1,2,3];
+  const { pathname } = useLocation();
+  return !data.length ? (
+    pathname == "/" ? (
+      ""
+    ) : (
+      <p className="font-gothic text-xl text-white my-auto">
+        No Records Found!
+      </p>
+    )
+  ) : (
+    <div className="flex flex-col space-y-4  max-w-[95%]  md:max-w-none">
+      <h1 className="text-xl font-gothic text-center text-pink-500">{title}</h1>
+      {pathname == "/" ? (
+        <NavLink to="/referers">
+          <span className="text-sm font-gothic  text-blue-600 flex items-center space-x-2 cursor-pointer hover:text-purple-500">
+            <span>Show All </span>
+            <HiOutlineExternalLink className="h-5 w-5" />
+          </span>
+        </NavLink>
+      ) : (
+        ""
+      )}
       <div className="bg-white">
         <div className=" overflow-x-auto">
           <div className=" min-w-full inline-block align-middle">
@@ -41,7 +53,7 @@ function RefererTable() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">
-                  {[1, 2, 3].map((each) => (
+                  {data.map((each) => (
                     <tr
                       key={each}
                       className="text-lg font-poppins font-semibold cursor-pointer group"

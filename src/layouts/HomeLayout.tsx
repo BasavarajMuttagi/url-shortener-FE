@@ -4,6 +4,7 @@ import StatCards from "../components/StatCards";
 import UserInputForm from "../components/UserInputForm";
 import apiClient from "../apiClient";
 import BaseLayout from "./BaseLayout";
+import RefererTable from "../components/RefererTable";
 
 function HomeLayout() {
   const refetchCall = () => {
@@ -48,7 +49,7 @@ function HomeLayout() {
       </div>
       <div className="w-full flex flex-col items-center justify-center space-y-10  mt-10">
         <ShortUrlTable data={data.All_URLS.toReversed()} limit={3} />
-        {/* <RefererTable /> */}
+        <RefererTable title={"Top Referers"} />
       </div>
     </BaseLayout>
   );
